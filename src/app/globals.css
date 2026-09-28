@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-barlow);
+  --font-mono: var(--font-ibm-mono);
+  --color-background: #0a0a0a;
+  --color-surface: #111111;
+  --color-charcoal: #171717;
+  --color-foreground: #f5f5f5;
+  --color-muted: #a3a3a3;
+  --color-line: #2c2c2c;
+  --color-paper: #eae9e5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+  ::selection {
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button,
+  summary {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 6px;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+}
+
+@utility page-shell {
+  width: min(100% - 3rem, 1440px);
+  margin-inline: auto;
+}
+@utility eyebrow {
+  font-family: var(--font-ibm-mono), monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@utility display-title {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.hero-glow {
+  background: radial-gradient(
+    ellipse at 61% 47%,
+    #393939 0%,
+    #191919 29%,
+    #0a0a0a 67%
+  );
+}
+.hero-portrait {
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
+}
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #686868;
+}
+.reveal {
+  animation: reveal-in 0.8s both;
+}
+.reveal-delayed {
+  animation: reveal-in 0.9s 0.12s both;
+}
+
+/* Parallax wrappers use individual translate. Hover translation lives on a
+   separate child so Tailwind's translate utilities can animate independently. */
+[data-parallax-ready] {
+  translate: var(--parallax-x, 0px) var(--parallax-y, 0px);
+}
+[data-parallax-active] {
+  will-change: translate;
+}
+.parallax-image[data-parallax-ready] {
+  transform: scale(1.12);
+}
+[data-reveal-state] {
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.65, 0.3, 1),
+    transform 850ms cubic-bezier(0.2, 0.65, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal-delay="1"] { --reveal-delay: 70ms; }
+[data-reveal-delay="2"] { --reveal-delay: 140ms; }
+[data-reveal-delay="3"] { --reveal-delay: 210ms; }
+[data-reveal-delay="4"] { --reveal-delay: 280ms; }
+[data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+[data-reveal-state="visible"],
+[data-reveal-state]:focus-within {
+  opacity: 1;
+  transform: none;
+}
+[data-reveal="fade"][data-reveal-state] {
+  transform: none;
+}
+[data-reveal-instant],
+[data-reveal-state]:focus-within {
+  transition: none !important;
+}
+
+.project-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  pointer-events: none;
+  transition: opacity 160ms;
+  will-change: transform;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 768px) {
+  .page-shell {
+    width: min(100% - 6rem, 1440px);
+  }
+}
+@media (min-width: 1280px) {
+  .page-shell {
+    width: min(100% - 8rem, 1440px);
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .project-cursor {
+    display: none;
+  }
+}
+@media (max-width: 767px), (pointer: coarse) {
+  [data-reveal-state="pending"] {
+    transform: translate3d(0, 14px, 0);
+  }
+  [data-reveal-state] {
+    transition-delay: 0ms;
+  }
+  .parallax-image[data-parallax-ready] {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .project-cursor {
+    display: none;
+  }
+  [data-parallax-ready] {
+    translate: none !important;
+    will-change: auto;
+  }
+  .parallax-image[data-parallax-ready] {
+    transform: none !important;
+  }
+  [data-reveal-state] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
