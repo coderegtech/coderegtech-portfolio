@@ -141,6 +141,32 @@ export function ProjectVisual({ project }: { project: Project }) {
         </p>
       </div>
     );
+  if (project.slug !== "chatterzph")
+    return (
+      <div
+        data-reveal
+        className="relative flex min-h-[370px] flex-col justify-between overflow-hidden border border-line bg-charcoal p-7 md:min-h-[470px] md:p-10"
+      >
+        <p className="eyebrow text-muted">{project.category}</p>
+        <p
+          data-parallax="section"
+          data-parallax-y="32"
+          className="py-8 font-display text-[clamp(2.75rem,6vw,5.5rem)] font-medium leading-none tracking-tight"
+        >
+          {project.title}
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {project.technologies.slice(0, 3).map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-white/20 px-4 py-2 font-mono text-xs"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
   return (
     <div
       data-reveal

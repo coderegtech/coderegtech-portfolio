@@ -11,6 +11,10 @@ export interface Project {
   github?: string;
   featured?: boolean;
   presentation?: "mobile" | "desktop";
+  /** AI coding tools used to build it; only set where the repo itself shows them. */
+  ai?: string[];
+  /** The standout feature across all projects. */
+  bestFeature?: { title: string; detail: string };
 }
 
 export interface Experience {

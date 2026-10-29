@@ -26,7 +26,8 @@ export function Projects() {
         <p data-reveal data-reveal-delay="1" className="max-w-sm text-base leading-8 text-muted lg:pb-2">
           A selection of projects across full-stack development, modern
           interfaces, and practical digital solutions. Built with purpose, from
-          the first idea to the final detail.
+          the first idea to the final detail. Projects tagged AI-assisted were
+          vibe-coded with tools like Claude Code, Codex, v0, and Lovable.
         </p>
       </div>
       <div className="grid gap-x-9 gap-y-16 lg:grid-cols-2 lg:gap-y-24">
@@ -85,6 +86,11 @@ export function Projects() {
                   <p className="mt-3 font-mono text-xs text-foreground/60">
                     {project.technologies.join(" / ")}
                   </p>
+                  {project.ai && (
+                    <p className="mt-1 font-mono text-xs text-foreground/60">
+                      AI-assisted · {project.ai.join(", ")}
+                    </p>
+                  )}
                 </div>
                 <div data-reveal data-reveal-delay="2" className="flex items-start gap-3">
                   {project.url && (

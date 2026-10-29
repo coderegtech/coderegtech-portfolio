@@ -77,6 +77,16 @@ export function ProjectCard({
       >
         {project.description}
       </p>
+      {project.bestFeature && (
+        <div data-reveal className="mt-5 max-w-xl border-l border-white/40 pl-4">
+          <p className="eyebrow text-[10px] text-muted">
+            Best feature · {project.bestFeature.title}
+          </p>
+          <p className="mt-2 text-sm leading-7 text-muted">
+            {project.bestFeature.detail}
+          </p>
+        </div>
+      )}
       <ul
         data-parallax="section"
         data-parallax-y="10"
@@ -93,6 +103,11 @@ export function ProjectCard({
             {tech}
           </li>
         ))}
+        {project.ai && (
+          <li className="rounded-full border border-white/40 px-3 py-1.5 text-xs">
+            AI-assisted · {project.ai.join(", ")}
+          </li>
+        )}
       </ul>
     </article>
   );

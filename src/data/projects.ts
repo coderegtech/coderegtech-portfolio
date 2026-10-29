@@ -1,8 +1,42 @@
 import type { Project } from "@/types";
 
-// Content and public links verified against https://johnreygun.vercel.app/.
-// The source did not provide project years, so none are inferred.
+// Original entries verified against https://johnreygun.vercel.app/; newer ones
+// are summarised from the public GitHub repositories. Private repositories are
+// never named or linked (see "Private work"). `ai` is only set where the repo
+// shows the tool (CLAUDE.md/AGENTS.md/.claude, a v0 branch, a Lovable README).
 export const projects: Project[] = [
+  {
+    id: 13,
+    title: "OmniChat",
+    slug: "omnichat",
+    category: "AI workspace · Cross-platform",
+    description:
+      "A cross-platform AI workspace for chat and coding, built as a TypeScript monorepo: a Next.js web app, an Expo mobile chat app, a sandboxed Electron shell, a Fastify API, and shared packages over PostgreSQL and Prisma. Models are reached through the user's own gateway with real authenticated requests and no canned responses. Coding mode offers Ask, Plan, Agent, and Review, plus an in-browser IDE with a CodeMirror editor, project search, a command palette, real terminals, and Git actions.",
+    technologies: ["Next.js", "Expo", "Electron", "Fastify", "PostgreSQL", "Prisma", "Docker"],
+    image: "",
+    github: "https://github.com/coderegtech/omnichat-app",
+    featured: true,
+    ai: ["OpenAI Codex"],
+    bestFeature: {
+      title: "Review-before-apply AI coding agent",
+      detail:
+        "AI edits never touch disk directly. The agent proposes changes as diffs, and publishing re-checks file hashes so an outside edit becomes a visible conflict instead of an overwrite. Commands run only after approval, in a throwaway Docker container with no network, a read-only filesystem, and dropped capabilities. Credential files are hidden and secrets are redacted before anything reaches the model.",
+    },
+  },
+  {
+    id: 14,
+    title: "PalaGo",
+    slug: "palago",
+    category: "Mobile · Transportation",
+    description:
+      "Online bus booking for Palawan routes, delivered as a passenger app, an operator console, and a crew app on Expo and Supabase. Passengers search trips, pick seats on a visual map, pay through a QR code, and receive a one-time signed boarding pass. Operators manage fleet, crew, manifests, and live trip tracking, with SOS alerts, a wallet, and loyalty points. Seat reservation stays atomic under concurrent bookings, proven by race tests, and Row Level Security and database constraints enforce roles and schedule conflicts. Online payments are simulated.",
+    technologies: ["Expo", "React Native", "Supabase", "PostgreSQL", "TypeScript", "NativeWind"],
+    image: "",
+    url: "https://palago-app.vercel.app",
+    github: "https://github.com/coderegtech/palago-app",
+    featured: true,
+    ai: ["Claude Code"],
+  },
   {
     id: 1,
     title: "Adventour",
@@ -53,6 +87,7 @@ export const projects: Project[] = [
     github: "https://github.com/coderegtech/anote-app",
     featured: true,
     presentation: "mobile",
+    ai: ["v0"],
   },
   {
     id: 5,
@@ -141,5 +176,65 @@ export const projects: Project[] = [
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     image: "",
     github: "https://github.com/coderegtech/social-media-app-mern",
+  },
+  {
+    id: 15,
+    title: "Musika",
+    slug: "musika",
+    category: "Mobile · Music",
+    description:
+      "A cross-platform music library for Android, iOS, web, and desktop, built on Expo and React Native with an Electron shell and a separate Python API. Google sign-in through Firebase is verified server-side and exchanged for revocable sessions, with secure token storage on native and HTTP-only cookies on the web. Includes search, playlists, a saved audio library, and a demo mode with original synthesized audio.",
+    technologies: ["React Native", "Expo", "Electron", "Python", "Firebase Auth", "Docker"],
+    image: "",
+    github: "https://github.com/coderegtech/musika-app",
+    ai: ["Claude Code"],
+  },
+  {
+    id: 16,
+    title: "Jsonify",
+    slug: "jsonify",
+    category: "Web · Developer tool",
+    description:
+      "A visual JSON editor with real-time sync. Edit a JSON tree with undo and redo while changes broadcast over Socket.IO to every open tab. A data-copy attribute system maps HTML elements to JSON paths for inline editing, and the sync layer is published as an npm package of React hooks plus a ready-to-run server.",
+    technologies: ["React", "TypeScript", "Vite", "Socket.IO", "shadcn/ui", "npm"],
+    image: "",
+    url: "https://jsonify-delta.vercel.app",
+    github: "https://github.com/coderegtech/jsonify",
+    ai: ["v0"],
+  },
+  {
+    id: 17,
+    title: "Blog",
+    slug: "blog",
+    category: "Full-stack · Content platform",
+    description:
+      "A multi-user blogging platform with authentication, protected routes, posts, comments, and image upload. Next.js route handlers sit on top of Supabase, with Redux Toolkit managing client state.",
+    technologies: ["Next.js", "Supabase", "Redux Toolkit", "TypeScript"],
+    image: "",
+    url: "https://blog-e-two.vercel.app",
+    github: "https://github.com/coderegtech/blog-e",
+  },
+  {
+    id: 18,
+    title: "NAS Dashboard",
+    slug: "nas-dashboard",
+    category: "Web · File storage",
+    description:
+      "A file-storage dashboard with sign-up and login, a file grid, an upload flow, and storage-usage stats.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    image: "",
+    github: "https://github.com/coderegtech/nas-frontend",
+    ai: ["Lovable"],
+  },
+  {
+    id: 19,
+    title: "Private work",
+    slug: "private-work",
+    category: "Client & commercial",
+    description:
+      "Client and commercial projects live in private repositories, so names, links, and details are withheld. The work spans business and marketing websites, booking and operations tools, and multi-tenant SaaS, mostly in Next.js and TypeScript with a Vue and Node API project alongside.",
+    technologies: ["Next.js", "TypeScript", "Vue", "Node.js"],
+    image: "",
+    ai: ["v0"],
   },
 ];
