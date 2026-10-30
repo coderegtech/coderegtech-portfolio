@@ -13,7 +13,7 @@ export const projects: Project[] = [
     description:
       "A cross-platform AI workspace for chat and coding, built as a TypeScript monorepo: a Next.js web app, an Expo mobile chat app, a sandboxed Electron shell, a Fastify API, and shared packages over PostgreSQL and Prisma. Models are reached through the user's own gateway with real authenticated requests and no canned responses. Coding mode offers Ask, Plan, Agent, and Review, plus an in-browser IDE with a CodeMirror editor, project search, a command palette, real terminals, and Git actions.",
     technologies: ["Next.js", "Expo", "Electron", "Fastify", "PostgreSQL", "Prisma", "Docker"],
-    image: "",
+    image: "/images/projects/omnichat/chat.webp",
     github: "https://github.com/coderegtech/omnichat-app",
     featured: true,
     ai: ["OpenAI Codex"],
@@ -31,7 +31,13 @@ export const projects: Project[] = [
     description:
       "Online bus booking for Palawan routes, delivered as a passenger app, an operator console, and a crew app on Expo and Supabase. Passengers search trips, pick seats on a visual map, pay through a QR code, and receive a one-time signed boarding pass. Operators manage fleet, crew, manifests, and live trip tracking, with SOS alerts, a wallet, and loyalty points. Seat reservation stays atomic under concurrent bookings, proven by race tests, and Row Level Security and database constraints enforce roles and schedule conflicts. Online payments are simulated.",
     technologies: ["Expo", "React Native", "Supabase", "PostgreSQL", "TypeScript", "NativeWind"],
-    image: "",
+    image: "/images/projects/palago/home.webp",
+    images: [
+      "/images/projects/palago/home.webp",
+      "/images/projects/palago/results.webp",
+      "/images/projects/palago/tracking.webp",
+    ],
+    presentation: "mobile",
     url: "https://palago-app.vercel.app",
     github: "https://github.com/coderegtech/palago-app",
     featured: true,
@@ -185,8 +191,15 @@ export const projects: Project[] = [
     description:
       "A cross-platform music library for Android, iOS, web, and desktop, built on Expo and React Native with an Electron shell and a separate Python API. Google sign-in through Firebase is verified server-side and exchanged for revocable sessions, with secure token storage on native and HTTP-only cookies on the web. Includes search, playlists, a saved audio library, and a demo mode with original synthesized audio.",
     technologies: ["React Native", "Expo", "Electron", "Python", "Firebase Auth", "Docker"],
-    image: "",
+    image: "/images/projects/musika/home.webp",
+    images: [
+      "/images/projects/musika/home.webp",
+      "/images/projects/musika/player.webp",
+      "/images/projects/musika/library.webp",
+    ],
+    presentation: "mobile",
     github: "https://github.com/coderegtech/musika-app",
+    featured: true,
     ai: ["Claude Code"],
   },
   {
@@ -236,5 +249,17 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Vue", "Node.js"],
     image: "",
     ai: ["v0"],
+  },
+  {
+    id: 20,
+    title: "DeltaOne",
+    slug: "deltaone",
+    category: "Business application",
+    description:
+      "An asset and inventory management system. Items carry stock thresholds and low-stock flags, work requests move from approval to a closed work order with photo attachments, and role-based permissions are set per group. Adds an activity log, reports, a phone layout, and a JSON API for external job-order systems, on server-rendered PHP with Docker Compose. Screenshots use mock data.",
+    technologies: ["PHP", "CodeIgniter", "MySQL", "Tailwind CSS", "Docker"],
+    image: "/images/projects/deltaone/dashboard.webp",
+    github: "https://github.com/coderegtech/deltaone",
+    featured: true,
   },
 ];

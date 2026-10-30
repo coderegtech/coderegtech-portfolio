@@ -141,6 +141,44 @@ export function ProjectVisual({ project }: { project: Project }) {
         </p>
       </div>
     );
+  if (project.image && project.presentation === "mobile")
+    return (
+      <div
+        data-reveal
+        className="relative flex min-h-[370px] items-end justify-center gap-3 overflow-hidden border border-line bg-charcoal px-7 pt-10 md:min-h-[470px] md:gap-5"
+      >
+        {(project.images ?? [project.image]).slice(0, 3).map((src, i) => (
+          <div
+            key={src}
+            className={`w-[30%] max-w-[170px] overflow-hidden rounded-t-[22px] border-[5px] border-b-0 border-line shadow-2xl transition-transform duration-500 ${i === 1 ? "translate-y-4 group-hover:translate-y-1" : "translate-y-10 group-hover:translate-y-6"}`}
+          >
+            <Image
+              src={src}
+              alt={`${project.title} app screen ${i + 1}`}
+              width={480}
+              height={1040}
+              sizes="170px"
+              className="w-full"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  if (project.image && project.slug !== "chatterzph")
+    return (
+      <div
+        data-reveal
+        className="relative min-h-[370px] overflow-hidden border border-line bg-charcoal md:min-h-[470px]"
+      >
+        <Image
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover object-left-top"
+        />
+      </div>
+    );
   if (project.slug !== "chatterzph")
     return (
       <div
