@@ -2,7 +2,8 @@ import type { Project } from "@/types";
 
 // Original entries verified against https://johnreygun.vercel.app/; newer ones
 // are summarised from the public GitHub repositories. Private repositories are
-// never named or linked (see "Private work"). `ai` is only set where the repo
+// not named or linked (see "Private work"), except DANAG Architects+, added at
+// the owner's request with only its live site linked. `ai` is only set where the repo
 // shows the tool (CLAUDE.md/AGENTS.md/.claude, a v0 branch, a Lovable README).
 // Entries with an `image` get a card; the rest appear in the expandable archive.
 export const projects: Project[] = [
@@ -78,6 +79,18 @@ export const projects: Project[] = [
       "/images/projects/deltaone/work-orders.webp",
     ],
     github: "https://github.com/coderegtech/deltaone",
+  },
+  {
+    id: 21,
+    title: "DANAG Architects+",
+    slug: "danag-architects",
+    category: "Web · Architecture studio",
+    description:
+      "The marketing site and content studio for an architecture firm in Puerto Princesa, Palawan. Visitors browse the studio, its services, a portfolio filterable by category, and designs for sale, then send an inquiry that is saved and emailed. A built-in admin edits every page's content and media and shows inquiries and analytics, and the site still renders from static copy without its database.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Supabase", "Nodemailer"],
+    image: "/images/projects/danag/home.webp",
+    url: "https://dandanagarchitects.com",
+    ai: ["Claude Code"],
   },
   {
     id: 1,
@@ -269,7 +282,7 @@ export const projects: Project[] = [
     slug: "private-work",
     category: "Client & commercial",
     description:
-      "Client and commercial projects live in private repositories, so names, links, and details are withheld. The work spans business and marketing websites, booking and operations tools, and multi-tenant SaaS, mostly in Next.js and TypeScript with a Vue and Node API project alongside.",
+      "Other client and commercial projects live in private repositories, so names, links, and details are withheld. The work spans business and marketing websites, booking and operations tools, and multi-tenant SaaS, mostly in Next.js and TypeScript with a Vue and Node API project alongside.",
     technologies: ["Next.js", "TypeScript", "Vue", "Node.js"],
     image: "",
     ai: ["v0"],
