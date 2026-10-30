@@ -51,7 +51,7 @@ The footer year is calculated during prerendering. A new deployment refreshes it
 
 ## Assets and source notes
 
-See [asset and content notes](docs/ASSETS.md). The old portfolio's Fruitask screenshot URLs no longer serve images. This rebuild includes a recovered Adventour logo, an actual Anote screen, and labeled product/technology overviews. Original screenshots can replace those overview visuals in `ProjectVisual.tsx` when available.
+See [asset and content notes](docs/ASSETS.md). The works section shows only projects with screenshots, taken from each public repository's README or docs. Add an `image` in `src/data/projects.ts` to display another project.
 
 ## Accessibility and motion
 

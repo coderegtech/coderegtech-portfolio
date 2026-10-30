@@ -19,7 +19,7 @@ export function ProjectCard({
         className="mb-4 flex items-center justify-between gap-4"
       >
         <span className="eyebrow text-muted">
-          0{index + 1} / Selected project
+          {String(index + 1).padStart(2, "0")} / Selected project
         </span>
         <span className="eyebrow text-right text-[10px] text-muted">
           {project.category}

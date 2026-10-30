@@ -9,7 +9,6 @@ export interface Project {
   technologies: string[];
   url?: string;
   github?: string;
-  featured?: boolean;
   presentation?: "mobile" | "desktop";
   /** AI coding tools used to build it; only set where the repo itself shows them. */
   ai?: string[];

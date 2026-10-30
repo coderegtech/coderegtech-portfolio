@@ -4,7 +4,7 @@
 
 Professional information, employment dates, responsibilities, technologies, project descriptions, and contact URLs were checked against https://johnreygun.vercel.app/ on September 27, 2026. React Native is supported by the source's employment history and project list. No project dates, client counts, awards, or employers were invented.
 
-The original portfolio lists twelve projects. Four are featured and eight are available in the native expandable archive. Damico Energy appeared only as an example in the redesign brief and is not asserted as a completed project.
+Project entries live in `src/data/projects.ts`, and the works section displays only those with a screenshot. Damico Energy appeared only as an example in the redesign brief and is not asserted as a completed project.
 
 ## Brand assets
 
@@ -24,11 +24,6 @@ Prompt used:
 
 ## Project visuals
 
-The original Fruitask image URLs returned the Fruitask application HTML, including when requested directly. They are not used as broken image sources.
-
-- **Adventour:** original logo retrieved from https://github.com/coderegtech/adventour-app/blob/main/assets/app_logo.png. The surrounding layout is labeled “Product overview” and describes the discover, compare, and reserve workflow from the source portfolio.
-- **E-commerce Inventory:** labeled technology overview of Angular, NestJS, MySQL, and Prisma, matching the published stack. It is a diagram, not an application screenshot.
-- **ChatterzPH:** labeled technology overview of Next.js, Firebase, and Firestore. The original live demo was verified at https://chatterzz-ph.vercel.app/ and redirects to its login screen.
-- **Anote:** actual public welcome screen captured at https://anote-chat.vercel.app/auth at 390 × 740. The optimized screenshot is `public/images/projects/anote.webp`.
+Screenshots in `public/images/projects/<slug>/` come from the README or `docs/screenshots` of each public repository, converted to WebP. Browser chrome and the Next.js dev badge are cropped out. Private repositories are not used.
 
 Project source and live links match the original portfolio. Availability of external demos remains controlled by their hosting providers.

@@ -4,6 +4,7 @@ import type { Project } from "@/types";
 // are summarised from the public GitHub repositories. Private repositories are
 // never named or linked (see "Private work"). `ai` is only set where the repo
 // shows the tool (CLAUDE.md/AGENTS.md/.claude, a v0 branch, a Lovable README).
+// Only entries with an `image` are displayed; the rest wait for a screenshot.
 export const projects: Project[] = [
   {
     id: 13,
@@ -14,8 +15,11 @@ export const projects: Project[] = [
       "A cross-platform AI workspace for chat and coding, built as a TypeScript monorepo: a Next.js web app, an Expo mobile chat app, a sandboxed Electron shell, a Fastify API, and shared packages over PostgreSQL and Prisma. Models are reached through the user's own gateway with real authenticated requests and no canned responses. Coding mode offers Ask, Plan, Agent, and Review, plus an in-browser IDE with a CodeMirror editor, project search, a command palette, real terminals, and Git actions.",
     technologies: ["Next.js", "Expo", "Electron", "Fastify", "PostgreSQL", "Prisma", "Docker"],
     image: "/images/projects/omnichat/chat.webp",
+    images: [
+      "/images/projects/omnichat/chat.webp",
+      "/images/projects/omnichat/image-studio.webp",
+    ],
     github: "https://github.com/coderegtech/omnichat-app",
-    featured: true,
     ai: ["OpenAI Codex"],
     bestFeature: {
       title: "Review-before-apply AI coding agent",
@@ -40,8 +44,40 @@ export const projects: Project[] = [
     presentation: "mobile",
     url: "https://palago-app.vercel.app",
     github: "https://github.com/coderegtech/palago-app",
-    featured: true,
     ai: ["Claude Code"],
+  },
+  {
+    id: 15,
+    title: "Musika",
+    slug: "musika",
+    category: "Mobile · Music",
+    description:
+      "A cross-platform music library for Android, iOS, web, and desktop, built on Expo and React Native with an Electron shell and a separate Python API. Google sign-in through Firebase is verified server-side and exchanged for revocable sessions, with secure token storage on native and HTTP-only cookies on the web. Includes search, playlists, a saved audio library, and a demo mode with original synthesized audio.",
+    technologies: ["React Native", "Expo", "Electron", "Python", "Firebase Auth", "Docker"],
+    image: "/images/projects/musika/home.webp",
+    images: [
+      "/images/projects/musika/home.webp",
+      "/images/projects/musika/player.webp",
+      "/images/projects/musika/library.webp",
+    ],
+    presentation: "mobile",
+    github: "https://github.com/coderegtech/musika-app",
+    ai: ["Claude Code"],
+  },
+  {
+    id: 20,
+    title: "DeltaOne",
+    slug: "deltaone",
+    category: "Business application",
+    description:
+      "An asset and inventory management system. Items carry stock thresholds and low-stock flags, work requests move from approval to a closed work order with photo attachments, and role-based permissions are set per group. Adds an activity log, reports, a phone layout, and a JSON API for external job-order systems, on server-rendered PHP with Docker Compose. Screenshots use mock data.",
+    technologies: ["PHP", "CodeIgniter", "MySQL", "Tailwind CSS", "Docker"],
+    image: "/images/projects/deltaone/dashboard.webp",
+    images: [
+      "/images/projects/deltaone/dashboard.webp",
+      "/images/projects/deltaone/work-orders.webp",
+    ],
+    github: "https://github.com/coderegtech/deltaone",
   },
   {
     id: 1,
@@ -51,9 +87,79 @@ export const projects: Project[] = [
     description:
       "A resort and hotel booking application that makes it easy to discover, compare, and reserve accommodations. Browse amenities, check availability, and plan the next getaway from one place.",
     technologies: ["Next.js", "React Native", "Tailwind CSS", "WebView"],
-    image: "/images/projects/adventour-logo.webp",
+    image: "/images/projects/adventour/landing.webp",
+    images: [
+      "/images/projects/adventour/landing.webp",
+      "/images/projects/adventour/home.webp",
+      "/images/projects/adventour/search.webp",
+    ],
+    presentation: "mobile",
     github: "https://github.com/coderegtech/adventour-app",
-    featured: true,
+  },
+  {
+    id: 4,
+    title: "Anote",
+    slug: "anote",
+    category: "Anonymous messaging",
+    description:
+      "An anonymous note messaging app for sending and receiving secret messages. Share a unique link, receive honest feedback, and start conversations without revealing your identity.",
+    technologies: ["Next.js", "Tailwind CSS", "Firebase"],
+    image: "/images/projects/anote/welcome.webp",
+    images: [
+      "/images/projects/anote/welcome.webp",
+      "/images/projects/anote/username.webp",
+      "/images/projects/anote/send-message.webp",
+    ],
+    presentation: "mobile",
+    url: "https://anote-chat.vercel.app/",
+    github: "https://github.com/coderegtech/anote-app",
+    ai: ["v0"],
+  },
+  {
+    id: 12,
+    title: "Pesbok",
+    slug: "pesbok",
+    category: "Full-stack · Social platform",
+    description:
+      "A MERN-stack social application inspired by Facebook. Includes authentication, friend requests, real-time chat, posts with media, likes, comments, and profile customization.",
+    technologies: ["MongoDB", "Express", "React", "Node.js"],
+    image: "/images/projects/pesbok/feed.webp",
+    github: "https://github.com/coderegtech/social-media-app-mern",
+  },
+  {
+    id: 9,
+    title: "Animenia PH",
+    slug: "animenia",
+    category: "Web · Entertainment",
+    description:
+      "An anime streaming interface with browsing, search, categorized content, and episode tracking.",
+    technologies: ["Vue.js", "Tailwind CSS", "Gogoanime API"],
+    image: "/images/projects/animenia/home.webp",
+    github: "https://github.com/coderegtech/animenia-ph",
+  },
+  {
+    id: 10,
+    title: "YouTube Clone",
+    slug: "youtube-clone",
+    category: "Web · Interface development",
+    description:
+      "A responsive video-sharing application inspired by YouTube, with video browsing, categories, search, comments, and subscriptions.",
+    technologies: ["React", "Tailwind CSS"],
+    image: "/images/projects/youtube/home.webp",
+    url: "https://youtube-clone-j76v.onrender.com/",
+    github: "https://github.com/coderegtech/youtube-ui-clone",
+  },
+  {
+    id: 11,
+    title: "TikTok Clone",
+    slug: "tiktok-clone",
+    category: "Web · Interface development",
+    description:
+      "A short-form video application inspired by TikTok, with a vertical feed, likes, comments, and a responsive mobile and web interface.",
+    technologies: ["React", "Tailwind CSS"],
+    image: "/images/projects/tiktok/feed.webp",
+    url: "https://tiktok-clone-ts26.onrender.com/",
+    github: "https://github.com/coderegtech/tiktok-ui-clone",
   },
   {
     id: 2,
@@ -65,7 +171,6 @@ export const projects: Project[] = [
     technologies: ["Angular", "NestJS", "MySQL", "Prisma"],
     image: "",
     github: "https://github.com/coderegtech/eim-system",
-    featured: true,
   },
   {
     id: 3,
@@ -78,22 +183,6 @@ export const projects: Project[] = [
     image: "",
     url: "https://chatterzz-ph.vercel.app/",
     github: "https://github.com/coderegtech/ChatterzzPh",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Anote",
-    slug: "anote",
-    category: "Anonymous messaging",
-    description:
-      "An anonymous note messaging app for sending and receiving secret messages. Share a unique link, receive honest feedback, and start conversations without revealing your identity.",
-    technologies: ["Next.js", "Tailwind CSS", "Firebase"],
-    image: "/images/projects/anote.webp",
-    url: "https://anote-chat.vercel.app/",
-    github: "https://github.com/coderegtech/anote-app",
-    featured: true,
-    presentation: "mobile",
-    ai: ["v0"],
   },
   {
     id: 5,
@@ -136,71 +225,6 @@ export const projects: Project[] = [
     image: "",
     url: "https://coderegtech.vercel.app/",
     github: "https://github.com/coderegtech/portfolio",
-  },
-  {
-    id: 9,
-    title: "Animenia PH",
-    slug: "animenia",
-    category: "Web · Entertainment",
-    description:
-      "An anime streaming interface with browsing, search, categorized content, and episode tracking.",
-    technologies: ["Vue.js", "Tailwind CSS", "Gogoanime API"],
-    image: "",
-    github: "https://github.com/coderegtech/animenia-ph",
-  },
-  {
-    id: 10,
-    title: "YouTube Clone",
-    slug: "youtube-clone",
-    category: "Web · Interface development",
-    description:
-      "A responsive video-sharing application inspired by YouTube, with video browsing, categories, search, comments, and subscriptions.",
-    technologies: ["React", "Tailwind CSS"],
-    image: "",
-    url: "https://youtube-clone-j76v.onrender.com/",
-    github: "https://github.com/coderegtech/youtube-ui-clone",
-  },
-  {
-    id: 11,
-    title: "TikTok Clone",
-    slug: "tiktok-clone",
-    category: "Web · Interface development",
-    description:
-      "A short-form video application inspired by TikTok, with a vertical feed, likes, comments, and a responsive mobile and web interface.",
-    technologies: ["React", "Tailwind CSS"],
-    image: "",
-    url: "https://tiktok-clone-ts26.onrender.com/",
-    github: "https://github.com/coderegtech/tiktok-ui-clone",
-  },
-  {
-    id: 12,
-    title: "Pesbok",
-    slug: "pesbok",
-    category: "Full-stack · Social platform",
-    description:
-      "A MERN-stack social application inspired by Facebook. Includes authentication, friend requests, real-time chat, posts with media, likes, comments, and profile customization.",
-    technologies: ["MongoDB", "Express", "React", "Node.js"],
-    image: "",
-    github: "https://github.com/coderegtech/social-media-app-mern",
-  },
-  {
-    id: 15,
-    title: "Musika",
-    slug: "musika",
-    category: "Mobile · Music",
-    description:
-      "A cross-platform music library for Android, iOS, web, and desktop, built on Expo and React Native with an Electron shell and a separate Python API. Google sign-in through Firebase is verified server-side and exchanged for revocable sessions, with secure token storage on native and HTTP-only cookies on the web. Includes search, playlists, a saved audio library, and a demo mode with original synthesized audio.",
-    technologies: ["React Native", "Expo", "Electron", "Python", "Firebase Auth", "Docker"],
-    image: "/images/projects/musika/home.webp",
-    images: [
-      "/images/projects/musika/home.webp",
-      "/images/projects/musika/player.webp",
-      "/images/projects/musika/library.webp",
-    ],
-    presentation: "mobile",
-    github: "https://github.com/coderegtech/musika-app",
-    featured: true,
-    ai: ["Claude Code"],
   },
   {
     id: 16,
@@ -249,17 +273,5 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Vue", "Node.js"],
     image: "",
     ai: ["v0"],
-  },
-  {
-    id: 20,
-    title: "DeltaOne",
-    slug: "deltaone",
-    category: "Business application",
-    description:
-      "An asset and inventory management system. Items carry stock thresholds and low-stock flags, work requests move from approval to a closed work order with photo attachments, and role-based permissions are set per group. Adds an activity log, reports, a phone layout, and a JSON API for external job-order systems, on server-rendered PHP with Docker Compose. Screenshots use mock data.",
-    technologies: ["PHP", "CodeIgniter", "MySQL", "Tailwind CSS", "Docker"],
-    image: "/images/projects/deltaone/dashboard.webp",
-    github: "https://github.com/coderegtech/deltaone",
-    featured: true,
   },
 ];
