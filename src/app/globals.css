@@ -27,15 +27,23 @@
     color: var(--color-background);
   }
   a,
-  button {
+  button,
+  summary {
     -webkit-tap-highlight-color: transparent;
   }
-  button {
+  button,
+  summary {
     cursor: pointer;
   }
   :focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 6px;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
   }
 }
 

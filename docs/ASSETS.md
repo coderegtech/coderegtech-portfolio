@@ -4,7 +4,7 @@
 
 Professional information, employment dates, responsibilities, technologies, project descriptions, and contact URLs were checked against https://johnreygun.vercel.app/ on September 27, 2026. React Native is supported by the source's employment history and project list. No project dates, client counts, awards, or employers were invented.
 
-Project entries live in `src/data/projects.ts`, and the works section displays only those with a screenshot. Damico Energy appeared only as an example in the redesign brief and is not asserted as a completed project.
+Project entries live in `src/data/projects.ts`, and the works section displays those with a screenshot as cards and the rest in the native expandable archive. Damico Energy appeared only as an example in the redesign brief and is not asserted as a completed project.
 
 ## Brand assets
 

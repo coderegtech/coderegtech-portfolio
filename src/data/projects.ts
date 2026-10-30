@@ -4,7 +4,7 @@ import type { Project } from "@/types";
 // are summarised from the public GitHub repositories. Private repositories are
 // never named or linked (see "Private work"). `ai` is only set where the repo
 // shows the tool (CLAUDE.md/AGENTS.md/.claude, a v0 branch, a Lovable README).
-// Only entries with an `image` are displayed; the rest wait for a screenshot.
+// Entries with an `image` get a card; the rest appear in the expandable archive.
 export const projects: Project[] = [
   {
     id: 13,
