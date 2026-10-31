@@ -51,7 +51,7 @@ The footer year is calculated during prerendering. A new deployment refreshes it
 
 ## Assets and source notes
 
-See [asset and content notes](docs/ASSETS.md). The works section shows projects with screenshots as cards, using images from each public repository's README or docs. The rest appear in the expandable archive. Add an `image` in `src/data/projects.ts` to move a project up to a card.
+See [asset and content notes](docs/ASSETS.md). The works section shows projects with screenshots as cards, using images from each public repository's README or docs. The rest appear in the expandable archive. Add an `image` in `src/data/projects.ts` to move a project up to a card. Clicking a card opens its `images` in a sliding gallery (`ProjectGallery.tsx`), and without JavaScript the card stays a plain link.
 
 ## Accessibility and motion
 

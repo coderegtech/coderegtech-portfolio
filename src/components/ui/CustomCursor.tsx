@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { Maximize2 } from "lucide-react";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export function CustomCursor() {
       className="project-cursor flex size-[76px] items-center justify-center gap-1 rounded-full bg-foreground text-background opacity-0 shadow-xl"
     >
       <span className="font-mono text-[10px] uppercase">View</span>
-      <ArrowUpRight className="size-4" />
+      <Maximize2 className="size-3.5" />
     </div>
   );
 }
