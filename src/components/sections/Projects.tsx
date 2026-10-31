@@ -1,6 +1,7 @@
 import { ArrowUpRight, Plus } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ProjectCard } from "@/components/ui/ProjectCard";
+import { ProjectGallery } from "@/components/ui/ProjectGallery";
 import { projects } from "@/data/projects";
 
 export function Projects() {
@@ -30,13 +31,15 @@ export function Projects() {
           vibe-coded with tools like Claude Code, Codex, v0, and Lovable.
         </p>
       </div>
-      <div className="grid gap-x-9 gap-y-16 lg:grid-cols-2 lg:gap-y-24">
-        {projects
-          .filter((project) => project.image)
-          .map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-      </div>
+      <ProjectGallery projects={projects.filter((project) => project.image)}>
+        <div className="grid gap-x-9 gap-y-16 lg:grid-cols-2 lg:gap-y-24">
+          {projects
+            .filter((project) => project.image)
+            .map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+        </div>
+      </ProjectGallery>
       <details className="group/archive mt-20 border-y border-line">
         <summary
           data-parallax-anchor

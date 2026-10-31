@@ -1,4 +1,4 @@
-import { ArrowUpRight, CodeXml } from "lucide-react";
+import { ArrowUpRight, CodeXml, Maximize2 } from "lucide-react";
 import { ProjectVisual } from "@/components/ui/ProjectVisual";
 import type { Project } from "@/types";
 
@@ -30,8 +30,10 @@ export function ProjectCard({
         target="_blank"
         rel="noopener noreferrer"
         data-project-link
+        data-gallery={project.slug}
         data-parallax-anchor
-        aria-label={`View ${project.title}${project.url ? " live site" : " on GitHub"} (opens in a new tab)`}
+        aria-haspopup="dialog"
+        aria-label={`View ${project.title} screenshots`}
         className="relative block overflow-hidden"
       >
         <div className="transition-transform duration-700 ease-out group-hover:scale-[1.025]">
@@ -43,7 +45,7 @@ export function ProjectCard({
           data-parallax-y="-14"
           className="absolute bottom-5 right-5 grid size-11 place-items-center rounded-full border border-white/30 bg-background/80 text-foreground backdrop-blur"
         >
-          <ArrowUpRight className="size-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <Maximize2 className="size-4 transition-transform group-hover:scale-110" />
         </span>
       </a>
       <div
@@ -56,17 +58,30 @@ export function ProjectCard({
         <h3 className="text-2xl font-medium tracking-[-0.04em] transition-transform duration-300 group-hover:translate-x-1 md:text-3xl">
           {project.title}
         </h3>
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${project.title} source code on GitHub (opens in a new tab)`}
-            className="grid size-11 shrink-0 place-items-center rounded-full border border-line text-muted transition-colors hover:border-white hover:text-white"
-          >
-            <CodeXml aria-hidden="true" className="size-4" />
-          </a>
-        )}
+        <div className="flex shrink-0 gap-2">
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} live site (opens in a new tab)`}
+              className="grid size-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-white hover:text-white"
+            >
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} source code on GitHub (opens in a new tab)`}
+              className="grid size-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-white hover:text-white"
+            >
+              <CodeXml aria-hidden="true" className="size-4" />
+            </a>
+          )}
+        </div>
       </div>
       <p
         data-parallax="section"

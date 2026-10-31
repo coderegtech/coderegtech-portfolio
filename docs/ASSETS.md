@@ -24,6 +24,6 @@ Prompt used:
 
 ## Project visuals
 
-Screenshots in `public/images/projects/<slug>/` come from the README or `docs/screenshots` of each public repository, converted to WebP. Browser chrome and the Next.js dev badge are cropped out. Private repositories are not used, except DANAG Architects+, added at the owner's request without its admin screen or a repository link.
+Screenshots in `public/images/projects/<slug>/` come from the README or `docs/screenshots` of each public repository, converted to WebP. Each was reviewed before use. Screens showing credentials, personal details, or client data are left out, and QR codes that encode tokens are blurred. Browser chrome and the Next.js dev badge are cropped out. ChatterzPH's screenshots were supplied by the owner. Private repositories are not used, except DANAG Architects+, added at the owner's request without its admin screen or a repository link.
 
 Project source and live links match the original portfolio. Availability of external demos remains controlled by their hosting providers.
