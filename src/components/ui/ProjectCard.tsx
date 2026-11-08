@@ -9,7 +9,8 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
-  const href = project.url ?? project.github;
+  // Projects with no public link fall back to their screenshot when JavaScript is off.
+  const href = project.url ?? project.github ?? project.image;
   return (
     <article data-parallax-anchor className="group min-w-0">
       <div

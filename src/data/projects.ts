@@ -2,8 +2,8 @@ import type { Project } from "@/types";
 
 // Original entries verified against https://johnreygun.vercel.app/; newer ones
 // are summarised from the public GitHub repositories. Private repositories are
-// not named or linked (see "Private work"), except DANAG Architects+, added at
-// the owner's request with only its live site linked. `ai` is only set where the repo
+// not named or linked (see "Private work"), except DANAG Architects+ and otw,
+// added at the owner's request without a repository link. `ai` is only set where the repo
 // shows the tool (CLAUDE.md/AGENTS.md/.claude, a v0 branch, a Lovable README).
 // Entries with an `image` get a card; the rest appear in the expandable archive.
 export const projects: Project[] = [
@@ -151,6 +151,28 @@ export const projects: Project[] = [
       "/images/projects/danag/contact.webp",
     ],
     url: "https://dandanagarchitects.com",
+    ai: ["Claude Code"],
+  },
+  {
+    id: 22,
+    title: "otw — On The Way",
+    slug: "otw",
+    category: "Mobile · Transportation",
+    description:
+      "A ride-hailing app for Palawan built with Expo and React Native. Riders book a motorcycle, tricycle, or car, keep an in-app wallet with top-up screens for GCash and Maya, subscribe to an unlimited-ride plan, and earn credit by referring friends. Firebase handles sign-in and data, every screen has its own deep link, and the app also runs on the web.",
+    technologies: ["Expo", "React Native", "Firebase", "NativeWind", "React Navigation"],
+    image: "/images/projects/otw/home.webp",
+    images: [
+      "/images/projects/otw/home.webp",
+      "/images/projects/otw/our-rewards.webp",
+      "/images/projects/otw/otw-premium.webp",
+      "/images/projects/otw/splash.webp",
+      "/images/projects/otw/menu.webp",
+      "/images/projects/otw/topup-wallet.webp",
+      "/images/projects/otw/edit-username.webp",
+      "/images/projects/otw/delete-account.webp",
+    ],
+    presentation: "mobile",
     ai: ["Claude Code"],
   },
   {
